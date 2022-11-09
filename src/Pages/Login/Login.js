@@ -4,10 +4,10 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
-    const { logIn } = useContext(AuthContext); 
+    const { logIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const[error, setError] = useState('');
+    const [error, setError] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,18 +18,18 @@ const Login = () => {
         // console.log(email, password);
 
         logIn(email, password)
-        .then(result=>{
-            const user = result.user;
-            console.log(user);
-            form.reset();
-            navigate('/');
-            setError('');
-            toast.success('Login Successful');
-        })
-        .catch(error=>{
-            console.log(error.message);
-            setError(error.message);
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                navigate('/');
+                setError('');
+                toast.success('Login Successful');
+            })
+            .catch(error => {
+                console.log(error.message);
+                setError(error.message);
+            })
     }
 
 
@@ -45,12 +45,14 @@ const Login = () => {
                     <input type="email" name='email' placeholder="Email " className="mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-cyan-500" />
                     <input type="password" name='password' placeholder="Pasword" className="mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-cyan-500" />
                     {
-                        error? <p className='text-red-600 font-bold'>{error.slice(22,-2)}</p> : ''
+                        error ? <p className='text-red-600 font-bold'>{error.slice(22, -2)}</p> : ''
                     }
                     <button className="w-full bg-slate-900 text-white p-3 rounded-lg font-semibold text-lg">Login</button>
                     <Link to='#' className="text-blue-400 text-center my-2">Forgot Pasword?</Link>
                     <hr />
-                    <button type="submit" className="w-full bg-amber-100 mt-8 mb-4  text-slate-400 p-3 rounded-lg font-semibold text-lg">Create New Account</button>
+                    <Link to='/signup'>
+                        <button type="submit" className="w-full bg-amber-100 mt-8 mb-4  text-slate-400 p-3 rounded-lg font-semibold text-lg">Create New Account</button>
+                    </Link>
                 </form>
 
                 <p className="text-center text-sm my-4">

@@ -45,13 +45,13 @@ const Header = () => {
 
 
                 <button className="inline-flex items-center bg-gray-800 border-0 text-slate-50 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base font-semibold my-4  ">Signin
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
                 </button>
                 <br />
                 <button className="inline-flex items-center bg-gray-800 border-0 text-slate-50 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base font-semibold my-4  ">Login
-                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
                         <path d="M5 12h14M12 5l7 7-7 7"></path>
                     </svg>
                 </button>
