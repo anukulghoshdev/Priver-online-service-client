@@ -19,7 +19,7 @@ const Services = () => {
 
                 <p className=' w-1/3 mx-auto text-slate-800 font-medium'>When you don’t have a team of research experts in-house, We will be here with our services is here to manage everything for you.</p>
             </div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-col-1 gap-4 w-9/12 mx-auto my-12'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-col-1 gap-4 w-9/12 mx-auto my-12' data-aos="zoom-in">
                 {
                     services.map(service => <ServicesCard key={service._id} service={service}></ServicesCard>)
                 }
