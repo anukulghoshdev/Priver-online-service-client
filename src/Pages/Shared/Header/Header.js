@@ -29,7 +29,7 @@ const Header = () => {
 
     return (
 
-        <div className='bg-amber-100 shadow-2xl text-zinc-800 ' data-aos="fade-down">
+        <div className='bg-[#F3F3E3] md:py-3 text-zinc-800 ' data-aos="fade-down">
 
             <div className={`bg-slate-900 block w-full md:hidden absolute duration-300 ease-out ${open ? 'top-20' : 'top-[-384px]'}`}>
 
@@ -77,7 +77,7 @@ const Header = () => {
 
                 <div className={`container mx-auto w-full md:flex flex-wrap p-5 flex-col md:flex-row items-center  `}>
 
-                    <Link className="flex title-font font-medium items-center text-gray-900  md:mb-0 ">
+                    <Link to='/' className="flex title-font font-medium items-center text-gray-900  md:mb-0 ">
                         <img src={logo} className='w-10 h-10' alt="" />
                         <span className="ml-3 text-xl font-bold text-zinc-800">Priver</span>
                     </Link >
@@ -85,7 +85,7 @@ const Header = () => {
                     <nav className={`md:ml-auto md:mr-auto  md:flex flex-wrap items-center text-base justify-center hidden `}>
                         <Link to="/" className="mr-5 font-bold hover:text-gray-900 ">Home</Link >
                         <Link className="mr-5 font-bold hover:text-gray-900">My Reviews</Link >
-                        <Link className="mr-5 font-bold hover:text-gray-900">Add Service</Link >
+                        <Link to='/addServices' className="mr-5 font-bold hover:text-gray-900">Add Service</Link >
                         <Link className="mr-5 font-bold hover:text-gray-900">Blogs</Link >
                     </nav>
 
