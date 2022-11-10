@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const { logIn } = useContext(AuthContext);
@@ -54,6 +55,8 @@ const Login = () => {
                 setError(error.message);
             })
     }
+
+    useTitle('login');
 
 
     return (
