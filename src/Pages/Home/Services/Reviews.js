@@ -26,6 +26,7 @@ const Reviews = ({ service_id, serviceName }) => {
             reviewPost,
             service_id,
             username: name,
+            serviceName,
             user_Email: email,
             userProfilePic: user?.photoURL,
             review_time: time
@@ -49,7 +50,6 @@ const Reviews = ({ service_id, serviceName }) => {
 
 
     useEffect(() => {
-        // http://localhost:5000/reviews?service_id=636b2dee163da24ff0ba358b
         fetch(`http://localhost:5000/reviews?service_id=${service_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
