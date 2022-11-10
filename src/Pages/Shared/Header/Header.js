@@ -91,7 +91,7 @@ const Header = () => {
                                 <Link to='/addServices' className="mr-5 font-bold hover:text-gray-900">Add Service</Link >
                             </>
                         }
-                        <Link className="mr-5 font-bold hover:text-gray-900">Blogs</Link >
+                        <Link to='/blogs' className="mr-5 font-bold hover:text-gray-900">Blogs</Link >
                     </nav>
 
 

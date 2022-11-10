@@ -46,8 +46,9 @@ const MyReviews = () => {
 
     return (
         <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100 my-16">
-            <h2 className="mb-4 text-2xl leading-tight text-black font-bold text-center">My Reviews</h2>
-            <div className="overflow-x-auto">
+            <h2 className="mb-4 text-2xl leading-tight text-black font-bold text-center">My Reviews {myreviews.length}</h2>
+
+            <div className="overflow-x-auto border-2 border-slate-900">
 
                 <table className="min-w-full text-xs ">
 
@@ -84,7 +85,7 @@ const MyReviews = () => {
                                             <button className='mr-2 bg-orange-400 text-black px-3 py-1 font-semibold rounded-xl'>Edit</button>
                                         </Link>
 
-                                        <button onClick={()=>{handleDelete(myreview._id)}} className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
+                                        <button onClick={() => { handleDelete(myreview._id) }} className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
 
 
 
@@ -93,12 +94,12 @@ const MyReviews = () => {
 
                             )
                         }
-
-
                     </tbody>
                 </table>
             </div>
         </div>
+
+        
     )
 
 };
