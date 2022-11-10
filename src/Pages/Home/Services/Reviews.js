@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const Reviews = ({ service_id, serviceName, serviceImage_url }) => {
@@ -61,7 +62,7 @@ const Reviews = ({ service_id, serviceName, serviceImage_url }) => {
     return (
         <div className='flex flex-col'>
             {
-                (!reviews )? <h2 className='text-3xl'>No reviews yet</h2> :
+                (!reviews) ? <h2 className='text-3xl'>No reviews yet</h2> :
                     <div className='py-5'>
                         <h2 className='text-xl text-center'>{reviews.length === 0 ? <p className='text-xl' >no reviews yet</p> : <p>Total reviews: {reviews.length}</p>}</h2>
                         {
@@ -77,8 +78,8 @@ const Reviews = ({ service_id, serviceName, serviceImage_url }) => {
 
                             )
                         }
-                    </div> 
-                    
+                    </div>
+
 
             }
 
@@ -112,7 +113,11 @@ const Reviews = ({ service_id, serviceName, serviceImage_url }) => {
                             {
                                 user?.uid ?
                                     <button className='text-sm bg-slate-900 w-20 h-6 border-2 border-slate-600 rounded-lg hover:bg-gray-800 focus:shadow-outline' type='submit' >Post</button> :
-                                    <p className='text-xs text-orange-600 font-bold w-44'>Please login to add a review.</p>
+                                    <p className='text-xs text-orange-600 font-bold w-44'>Please login to add a review.
+                                        <Link to='/login'>
+                                            <button className='text-yellow-50 bg-blue-600 px-2 py-1 rounded-xl'>login now</button>
+                                        </Link>
+                                    </p>
                             }
 
                         </div>

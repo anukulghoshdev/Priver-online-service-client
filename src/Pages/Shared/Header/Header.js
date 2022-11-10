@@ -31,7 +31,7 @@ const Header = () => {
 
         <div className='bg-[#F3F3E3] md:py-3 text-zinc-800 '>
 
-            <div  className={`z-40 bg-slate-900 block w-full md:hidden absolute duration-300 ease-out ${open ? 'top-20' : 'top-[-384px]'}`}>
+            <div className={`z-40 bg-slate-900 block w-full md:hidden absolute duration-300 ease-out ${open ? 'top-20' : 'top-[-384px]'}`}>
 
 
                 <nav className={`text-black font-bold flex flex-col justify-center  `}>
@@ -84,8 +84,13 @@ const Header = () => {
 
                     <nav className={`md:ml-auto md:mr-auto  md:flex flex-wrap items-center text-base justify-center hidden `}>
                         <Link to="/" className="mr-5 font-bold hover:text-gray-900 ">Home</Link >
-                        <Link to='/myreviews' className="mr-5 font-bold hover:text-gray-900">My Reviews</Link >
-                        <Link to='/addServices' className="mr-5 font-bold hover:text-gray-900">Add Service</Link >
+                        {
+                            user &&
+                            <>
+                                <Link to='/myreviews' className="mr-5 font-bold hover:text-gray-900">My Reviews</Link >
+                                <Link to='/addServices' className="mr-5 font-bold hover:text-gray-900">Add Service</Link >
+                            </>
+                        }
                         <Link className="mr-5 font-bold hover:text-gray-900">Blogs</Link >
                     </nav>
 

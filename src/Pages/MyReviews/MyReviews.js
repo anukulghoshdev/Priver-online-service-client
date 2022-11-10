@@ -20,24 +20,26 @@ const MyReviews = () => {
     // service_id
     // 
 
-    const handleDelete=(id)=>{
+    const handleDelete = (id) => {
         const confirm = window.confirm('do you want to delete this review?')
-        if(confirm){
+        if (confirm) {
             fetch(`http://localhost:5000/myreviews/${id}`, {
-                method:'DELETE'
-               
+                method: 'DELETE'
+
             })
-            .then(res=>res.json())
-            .then(data=>{
-                if(data.deletedCount>0){
-                    toast.success('Review Deleted Successfully')
-                    const remainningMyReview = myreviews.filter(myreview=>myreview._id !== id)
-                    setmyreviews(remainningMyReview)
-                }
-                console.log(data)
-            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        toast.success('Review Deleted Successfully')
+                        const remainningMyReview = myreviews.filter(myreview => myreview._id !== id)
+                        setmyreviews(remainningMyReview)
+                    }
+                    console.log(data)
+                })
         }
     }
+
+
 
 
 
@@ -78,10 +80,14 @@ const MyReviews = () => {
                                     </td>
 
                                     <td className="p-3 ">
-                                        <button className='mr-2 bg-orange-400 text-black px-3 py-1 font-semibold rounded-xl'>Edit</button>
-                         
-                                        <button onClick={()=>handleDelete(myreview._id)} className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
-                             
+                                        <Link to={`/updateReview/${myreview._id}`}>
+                                            <button className='mr-2 bg-orange-400 text-black px-3 py-1 font-semibold rounded-xl'>Edit</button>
+                                        </Link>
+
+                                        <button onClick={()=>{handleDelete(myreview._id)}} className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
+
+
+
                                     </td>
                                 </tr>
 
