@@ -22,7 +22,7 @@ const AddServices = () => {
             image_url,
             description
         }
-        fetch('http://localhost:5000/services', {
+        fetch('https://ass-10-server-plum.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

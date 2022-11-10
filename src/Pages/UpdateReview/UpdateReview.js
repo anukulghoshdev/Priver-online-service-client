@@ -35,7 +35,7 @@ const UpdateReview = () => {
     const handleUpdateReview=(event)=>{
         event.preventDefault();
 
-        fetch(`http://localhost:5000/myreviews/${singleReview._id}`,{
+        fetch(`https://ass-10-server-plum.vercel.app/myreviews/${singleReview._id}`,{
             method: 'PUT',
             headers: {
                 'content-type':'application/json'
@@ -84,7 +84,7 @@ const UpdateReview = () => {
 
                         {
                             user?.uid ?
-                                <button className='text-sm bg-slate-900 w-20 h-6 border-2 border-slate-600 rounded-lg hover:bg-gray-800 focus:shadow-outline' type='submit' >Post</button> :
+                                <button className='text-sm bg-slate-900 w-20 h-6 border-2 border-slate-600 rounded-lg hover:bg-gray-800 focus:shadow-outline text-white' type='submit' >Update</button> :
                                 <p className='text-xs text-orange-600 font-bold w-44'>Please login to add a review.</p>
                         }
 

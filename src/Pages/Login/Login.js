@@ -27,7 +27,27 @@ const Login = () => {
                 form.reset();
                 setError('');
                 toast.success('Login Successful');
-                navigate(from, { replace: true })
+
+                const curentUser = {
+                    email: user.email
+                }
+
+                // get jwt token
+                fetch('https://ass-10-server-plum.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(curentUser) 
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('priverToken', data.token)
+                        
+                        navigate(from, { replace: true })
+                    });
+
             })
             .catch(error => {
                 console.log(error.message);
@@ -40,7 +60,7 @@ const Login = () => {
         <div className="p-20 h-screen w-screen flex flex-col-reverse md:flex-row items-center justify-center bg-gray-200">
             <div className="content text-3xl text-center md:text-left" data-aos="fade-right">
                 <h1 className="text-5xl text-slate-900 font-bold">Priver</h1>
-                <p>Connect with friends and the world around you.</p>
+                <p>Connect with your best researchers to find the world .</p>
             </div>
             <div className="container mx-auto flex flex-col items-center" data-aos="fade-left">
 
