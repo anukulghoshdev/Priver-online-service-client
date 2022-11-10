@@ -51,58 +51,68 @@ const MyReviews = () => {
 
 
     return (
-        <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100 my-16">
-            <h2 className="mb-4 text-2xl leading-tight text-black font-bold text-center">My Reviews {myreviews.length}</h2>
-
-            <div className="overflow-x-auto border-2 border-slate-900">
-
-                <table className="min-w-full text-xs ">
-
-                    <thead className="bg-slate-500">
-                        <tr className="text-left">
-                            <th className="p-3 text-xl">Service Name</th>
-                            <th className="p-3 text-xl">Your Review</th>
-                            <th className="p-3 text-xl">Issued</th>
-                            <th className="p-3 text-xl">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+        <div className='border'>
 
 
+            {
+                (myreviews.length===0) ? <h3 className='text-3xl font-bold text-center py-52'>No Reviews added</h3> :
+                <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100 my-16 ">
+                <h2 className="mb-4 text-2xl leading-tight text-black font-bold text-center">My Reviews {myreviews.length}</h2>
 
-                        {
-                            myreviews.map(myreview =>
-                                <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-300">
-                                    <td className="p-3">
-                                        <p className='text-black font-medium text-base'>{myreview.serviceName}</p>
-                                    </td>
-                                    <td className="p-3">
-                                        <p className='text-black font-medium text-base'>{myreview.reviewPost}</p>
-                                    </td>
+                <div className="overflow-x-auto ">
+
+                    <table className="min-w-full text-xs ">
+
+                        <thead className="bg-slate-500">
+                            <tr className="text-left">
+                                <th className="p-3 text-xl">Service Name</th>
+                                <th className="p-3 text-xl">Your Review</th>
+                                <th className="p-3 text-xl">Issued</th>
+                                <th className="p-3 text-xl">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
 
 
-                                    <td className="p-3 ">
-                                        <p className='text-black font-medium text-base'>{myreview.review_time}</p>
-                                    </td>
-
-                                    <td className="p-3 ">
-                                        <Link to={`/updateReview/${myreview._id}`}>
-                                            <button className='mr-2 bg-orange-400 text-black px-3 py-1 font-semibold rounded-xl'>Edit</button>
-                                        </Link>
-
-                                        <button onClick={() => { handleDelete(myreview._id) }} className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
-
+                            {
+                                myreviews?.map(myreview =>
+                                    <tr className="border-b border-opacity-20 dark:border-gray-700 dark:bg-gray-300">
+                                        <td className="p-3">
+                                            <p className='text-black font-medium text-base'>{myreview.serviceName}</p>
+                                        </td>
+                                        <td className="p-3">
+                                            <p className='text-black font-medium text-base'>{myreview.reviewPost}</p>
+                                        </td>
 
 
-                                    </td>
-                                </tr>
 
-                            )
-                        }
-                    </tbody>
-                </table>
+                                        <td className="p-3 ">
+                                            <p className='text-black font-medium text-base'>{myreview.review_time}</p>
+                                        </td>
+
+                                        <td className="p-3 ">
+                                            <Link to={`/updateReview/${myreview._id}`}>
+                                                <button className='mr-2 bg-orange-400 text-black px-3 py-1 font-semibold rounded-xl'>Edit</button>
+                                            </Link>
+
+                                            <button onClick={() => { handleDelete(myreview._id) }} className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
+
+
+
+                                        </td>
+                                    </tr>
+
+                                )
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+            }
+
+
         </div>
 
 
