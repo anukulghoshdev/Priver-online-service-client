@@ -2,9 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
-const Reviews = ({ service_id, serviceName }) => {
+const Reviews = ({ service_id, serviceName, serviceImage_url }) => {
     const { user } = useContext(AuthContext)
-    console.log(service_id, serviceName);
+    console.log(service_id, serviceName, serviceImage_url);
     const [reviews, setReviews] = useState([]);
 
 
@@ -27,10 +27,12 @@ const Reviews = ({ service_id, serviceName }) => {
             service_id,
             username: name,
             serviceName,
+            serviceImage_url,
             user_Email: email,
             userProfilePic: user?.photoURL,
             review_time: time
         }
+
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {

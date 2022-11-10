@@ -31,7 +31,7 @@ const Header = () => {
 
         <div className='bg-[#F3F3E3] md:py-3 text-zinc-800 ' data-aos="fade-down">
 
-            <div className={`bg-slate-900 block w-full md:hidden absolute duration-300 ease-out ${open ? 'top-20' : 'top-[-384px]'}`}>
+            <div data-aos="fade-up" className={`bg-slate-900 block w-full md:hidden absolute duration-300 ease-out ${open ? 'top-20' : 'top-[-384px]'}`}>
 
 
                 <nav className={`text-black font-bold flex flex-col justify-center  `}>

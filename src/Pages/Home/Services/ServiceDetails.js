@@ -19,7 +19,7 @@ const ServiceDetails = () => {
             </div>
 
             <div className='text-3xl text-slate-300 font-semibold border-2 border-l-slate-300 md:basis-2/6'>
-                <Reviews service_id={_id} serviceName={serviceName}></Reviews>
+                <Reviews service_id={_id} serviceName={serviceName} serviceImage_url={image_url}></Reviews>
             </div>
         </div>
     );
