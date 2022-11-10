@@ -1,5 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const AddServices = () => {
 
@@ -41,6 +42,8 @@ const AddServices = () => {
             .catch(error => console.log(error));
 
     }
+
+    useTitle('Add-services');
     return (
         <div>
             <h3 className='text-4xl text-slate-900 font-bold text-center my-5'>Add Your Services</h3>

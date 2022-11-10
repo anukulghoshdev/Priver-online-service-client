@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 import Reviews from './Reviews';
 
 const ServiceDetails = () => {
     const { _id, serviceName, price, ratting, image_url, description } = useLoaderData();
+
+    useTitle('Details');
     const {user} = useContext(AuthContext)
     return (
         <div className='flex flex-col lg:flex-row'>

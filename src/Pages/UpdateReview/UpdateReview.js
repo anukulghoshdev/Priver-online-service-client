@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateReview = () => {
     const singleReview = useLoaderData();
@@ -53,6 +54,8 @@ const UpdateReview = () => {
         })
 
     }
+
+    useTitle('updateReview');
 
 
 

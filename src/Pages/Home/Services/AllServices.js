@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import ServicesCard from './ServicesCard';
 import banner_img from '../../../assests/banner/4.jpg'
+import useTitle from '../../../hooks/useTitle';
 
 const AllServices = () => {
     const [services, setServices] = useState([])
+
+    useTitle('allservices');
 
     useEffect(() => {
         fetch('https://ass-10-server-plum.vercel.app/allservices')
