@@ -20,7 +20,7 @@ const MyReviews = () => {
 
 
     return (
-        <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100 py-8">
+        <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100 my-16">
             <h2 className="mb-4 text-2xl leading-tight text-black font-bold text-center">My Reviews</h2>
             <div className="overflow-x-auto">
                 
