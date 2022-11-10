@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const MyReviews = () => {
@@ -18,12 +20,33 @@ const MyReviews = () => {
     // service_id
     // 
 
+    const handleDelete=(id)=>{
+        const confirm = window.confirm('do you want to delete this review?')
+        if(confirm){
+            fetch(`http://localhost:5000/myreviews/${id}`, {
+                method:'DELETE'
+               
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                if(data.deletedCount>0){
+                    toast.success('Review Deleted Successfully')
+                    const remainningMyReview = myreviews.filter(myreview=>myreview._id !== id)
+                    setmyreviews(remainningMyReview)
+                }
+                console.log(data)
+            })
+        }
+    }
+
+
+
 
     return (
         <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100 my-16">
             <h2 className="mb-4 text-2xl leading-tight text-black font-bold text-center">My Reviews</h2>
             <div className="overflow-x-auto">
-                
+
                 <table className="min-w-full text-xs ">
 
                     <thead className="bg-slate-500">
@@ -56,7 +79,9 @@ const MyReviews = () => {
 
                                     <td className="p-3 ">
                                         <button className='mr-2 bg-orange-400 text-black px-3 py-1 font-semibold rounded-xl'>Edit</button>
-                                        <button className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
+                         
+                                        <button onClick={()=>handleDelete(myreview._id)} className='bg-red-400 text-black px-3 py-1 font-semibold rounded-xl'>Delete</button>
+                             
                                     </td>
                                 </tr>
 
