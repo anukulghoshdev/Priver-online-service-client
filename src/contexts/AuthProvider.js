@@ -27,6 +27,7 @@ const AuthProvider = ({ children }) => {
 
     const userlogOut = () => {
         setLoading(true);
+        localStorage.removeItem('priverToken');
         return signOut(Auth)
     }
 

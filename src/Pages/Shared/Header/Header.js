@@ -29,33 +29,62 @@ const Header = () => {
 
     return (
 
-        <div className='bg-[#F3F3E3] md:py-3 text-zinc-800 '>
+        <div className='bg-[#F3F3E3] md:py-3 text-zinc-800 text-center'>
 
             <div className={`z-40 bg-slate-900 block w-full md:hidden absolute duration-300 ease-out ${open ? 'top-20' : 'top-[-384px]'}`}>
 
 
                 <nav className={`text-black font-bold flex flex-col justify-center  `}>
-                    <Link className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">Home</Link >
-                    <Link className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">My Reviews</Link >
-                    <Link className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">Add Service</Link >
-                    <Link className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">Blogs</Link >
+                    <Link to="/" className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">Home</Link >
+
+                    {
+                        user &&
+                        <>
+                            <Link to='/myreviews' className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">My Reviews</Link >
+                            <Link to='/addServices' className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">Add Service</Link >
+                        </>
+                    }
+                    <Link to='/blogs' className="mr-5 text-zinc-200 font-bold hover:text-gray-400 py-2">Blogs</Link >
 
                 </nav>
 
 
 
-                <button className="inline-flex items-center bg-gray-800 border-0 text-slate-50 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base font-semibold my-4  ">Signin
-                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-                <br />
-                <button className="inline-flex items-center bg-gray-800 border-0 text-slate-50 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base font-semibold my-4  ">Login
-                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </button>
-                <br />
+                {
+                    user?.uid ?
+                        <button onClick={handleLogout} className="inline-flex items-center bg-gray-800 border-0 text-slate-50 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base font-semibold my-4  ">Log Out
+                            <HiOutlineLogout className='w-4 h-4 ml-2'></HiOutlineLogout>
+                        </button> :
+
+                        <>
+                            <Link to='/signup'>
+                                <button className="inline-flex items-center bg-gray-800 border-0 text-slate-50 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base font-semibold my-4  ">Sign Up
+                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </Link>
+
+                            <br />
+
+                            <Link to='/login'>
+                                <button className="inline-flex items-center bg-gray-800 border-0 text-slate-50 py-1 px-3 focus:outline-none hover:bg-gray-600 rounded text-base font-semibold my-4  ">Login
+                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </Link>
+
+                            <br />
+
+                        </>
+
+
+                }
+
+
+
+
 
 
 
@@ -108,7 +137,7 @@ const Header = () => {
                             </button> :
                             <>
                                 <Link to='/signup'>
-                                    <button className="md:inline-flex items-center font-semibold text-slate-50 bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 hidden mr-2">Signin
+                                    <button className="md:inline-flex items-center font-semibold text-slate-50 bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0 hidden mr-2">Sign Up
                                         <FaSignInAlt className='w-4 h-4 ml-2'></FaSignInAlt>
                                     </button>
 

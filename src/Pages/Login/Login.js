@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { SetAuthToken } from '../../getJwt/getJwt';
 import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
@@ -29,25 +30,7 @@ const Login = () => {
                 setError('');
                 toast.success('Login Successful');
 
-                const curentUser = {
-                    email: user.email
-                }
-
-                // get jwt token
-                fetch('https://ass-10-server-plum.vercel.app/jwt', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify(curentUser) 
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        localStorage.setItem('priverToken', data.token)
-                        
-                        navigate(from, { replace: true })
-                    });
+                SetAuthToken(user);
 
             })
             .catch(error => {

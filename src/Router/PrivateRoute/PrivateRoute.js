@@ -11,7 +11,6 @@ const PrivateRoute = ({children}) => {
         return <LoaderSpinner></LoaderSpinner>
     }
 
-
     if(user && user.uid){
         return children;
     }

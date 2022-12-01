@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { SetAuthToken } from '../../getJwt/getJwt';
 import useTitle from '../../hooks/useTitle';
 
 
@@ -50,6 +51,7 @@ const SignUp = () => {
             console.log(user);
             navigate('/');
             toast.success('Login with google successfully');
+            // SetAuthToken(user)
 
         })
         .catch(error=>{
@@ -74,6 +76,8 @@ const SignUp = () => {
                 handleUdateProfile(username, photoURL);
                 navigate('/');
                 toast.success('Registration successful');
+                // SetAuthToken(user)
+                
             })
             .catch((error)=>{
                 toast.error(error.message);
@@ -114,8 +118,6 @@ const SignUp = () => {
 
 
     useTitle('Signup');
-
-
 
 
 

@@ -17,7 +17,7 @@ const Banner = () => {
                 <img src={img1} alt="" className='w-full h-full object-cover absolute mix-blend-overlay' />
 
                 <div className='p-24'>
-                    <h2 className='text-7xl text-slate-50 font-bold absolute md:left-40'>Research is your own way</h2>
+                    <h2 className='text-4xl md:text-5xl lg:text-6xl text-slate-50 font-bold absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]'>Research is your own way</h2>
                 </div>
 
             </div>

@@ -34,7 +34,7 @@ const Reviews = ({ service_id, serviceName, serviceImage_url }) => {
             review_time: time
         }
 
-        fetch('https://ass-10-server-plum.vercel.app/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -53,10 +53,10 @@ const Reviews = ({ service_id, serviceName, serviceImage_url }) => {
 
 
     useEffect(() => {
-        fetch(`https://ass-10-server-plum.vercel.app/reviews?service_id=${service_id}`)
+        fetch(`http://localhost:5000/reviews?service_id=${service_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
-    }, [reviews])
+    }, [reviews, service_id])
 
 
     return (

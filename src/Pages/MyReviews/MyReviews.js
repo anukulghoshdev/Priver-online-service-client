@@ -10,7 +10,7 @@ const MyReviews = () => {
 
 
     useEffect(() => {
-        fetch(`https://ass-10-server-plum.vercel.app/myreviews?email=${user?.email}`, {
+        fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('priverToken')}`
             }
@@ -29,8 +29,9 @@ const MyReviews = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm('do you want to delete this review?')
         if (confirm) {
-            fetch(`https://ass-10-server-plum.vercel.app/myreviews/${id}`, {
+            fetch(`http://localhost:5000/myreviews/${id}`, {
                 method: 'DELETE'
+
 
             })
                 .then(res => res.json())

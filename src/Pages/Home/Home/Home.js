@@ -5,6 +5,10 @@ import ServiceAction from '../ServiceAction/ServiceAction';
 import ServiceFeatures from '../ServiceFeatures/ServiceFeatures';
 import Services from '../Services/Services';
 
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
+
 const Home = () => {
     useTitle('Home');
     return (
