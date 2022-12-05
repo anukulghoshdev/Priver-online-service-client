@@ -1,6 +1,6 @@
 **Live site: https://ass-server-85f69.web.app/ 
 
-** Priver
+** Priver **
 
 -------using external packages or frameworks, libraries--------
 
@@ -11,6 +11,7 @@
 - react-hot-toast
 - mumbaUI
 - tailwind css
+- 
 -------different features and functionality-------
 
 - added difference services and reviews.
