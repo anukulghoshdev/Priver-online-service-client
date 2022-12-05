@@ -1,6 +1,6 @@
 **Live site: https://ass-server-85f69.web.app/ 
 
-** Priver **
+**Priver**
 
 -------using external packages or frameworks, libraries--------
 
