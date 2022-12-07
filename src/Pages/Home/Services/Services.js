@@ -10,7 +10,7 @@ const Services = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://ass-10-server-plum.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

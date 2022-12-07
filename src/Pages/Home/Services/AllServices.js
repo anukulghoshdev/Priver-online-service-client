@@ -35,13 +35,12 @@ const AllServices = () => {
 
     const handleSearch = () => {
         setSearch(searchRef.current.value);
-
     }
 
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allservices?search=${search}&order=${isAsc === 'asc' ? 'asc' : 'desc'}`)
+        fetch(`https://ass-10-server-plum.vercel.app/allservices?search=${search}&order=${isAsc === 'asc' ? 'asc' : 'desc'}`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [isAsc, search])
@@ -66,7 +65,7 @@ const AllServices = () => {
                     <p className='ml-12'>Sort by price: </p>
                     <select value={isAsc} onChange={handleChange} className="select select-bordered w-52 border-2 border-zinc-800 ">
                         {
-                            options.map(option => <option key={option.value} value={option.value} >{option.text}</option>)
+                            options.map (option => <option key={option.value} value={option.value} >{option.text}</option>)
                         }
                     </select>
                 </div>

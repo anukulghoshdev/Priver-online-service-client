@@ -12,7 +12,7 @@ export const SetAuthToken = (user) => {
     }
 
     // get jwt token
-    fetch('http://localhost:5000/jwt', {
+    fetch('https://ass-10-server-plum.vercel.app/jwt', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

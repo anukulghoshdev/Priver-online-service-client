@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import logo from '../../../assests/logo.png'
 import { FaBars } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
-import logo from '../../../assests/logo.png'
 import { HiOutlineLogin, HiOutlineLogout } from "react-icons/hi";
 import { FaSignInAlt } from "react-icons/fa";
 import { AuthContext } from '../../../contexts/AuthProvider';
@@ -82,12 +82,6 @@ const Header = () => {
 
                 }
 
-
-
-
-
-
-
             </div>
 
 
@@ -95,8 +89,6 @@ const Header = () => {
 
 
             <header className="text-gray-600 body-font  relative">
-
-
 
                 <div onClick={() => setOpen(!open)} className=" text-3xl block md:hidden absolute top-1/3 left-[90%] ">
                     {
@@ -123,13 +115,6 @@ const Header = () => {
                         <Link to='/blogs' className="mr-5 font-bold hover:text-gray-900">Blogs</Link >
                     </nav>
 
-
-
-
-
-
-
-
                     {
                         user?.uid ?
                             <button onClick={handleLogout} className="md:inline-flex items-center font-semibold text-black border border-1 py-1 px-3 focus:outline-orange-300 hover:bg-orange-200 rounded text-base mt-4 md:mt-0 hidden ">Log Out
@@ -151,11 +136,6 @@ const Header = () => {
                             </>
 
                     }
-
-
-
-
-
 
                 </div>
             </header>

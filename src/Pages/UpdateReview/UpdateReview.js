@@ -36,7 +36,7 @@ const UpdateReview = () => {
     const handleUpdateReview=(event)=>{
         event.preventDefault();
 
-        fetch(`http://localhost:5000/myreviews/${singleReview._id}`,{
+        fetch(`https://ass-10-server-plum.vercel.app/myreviews/${singleReview._id}`,{
             method: 'PUT',
             headers: {
                 'content-type':'application/json'
