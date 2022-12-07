@@ -1,11 +1,20 @@
-# Getting Started with Create React App
+**Live site: https://ass-server-85f69.web.app/ 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Priver**
 
-## Available Scripts
+-------using external packages or frameworks, libraries--------
 
-In the project directory, you can run:
+- react-router-dom
+- react bootstrap
+- firebase
+- react icons
+- react-hot-toast
+- mumbaUI
+- tailwind css
+- 
+-------different features and functionality-------
 
+<<<<<<< HEAD
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -68,3 +77,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+- added difference services and reviews.
+- all the services reloaded from mongo db.
+- user can add their services
+- they can see other people reviews and make difference
+- services can be create, delete and update.
+- user token had implemented and give the valid data for valid/authentic user
+>>>>>>> 669223179f05ca83a7df427972a9a3ffd39090a9
