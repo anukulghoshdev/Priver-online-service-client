@@ -3,7 +3,7 @@ import research_action from '../../../assests/others/research_action.jpg'
 
 const ServiceAction = () => {
     return (
-        <section className="text-gray-600 body-font">
+        <section className="text-gray-600 body-font ">
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center" data-aos="fade-right">
                     <p className="text-xl font-bold text-[#6C6C6C]">QUALITY & EFFICIENCE</p>
@@ -39,7 +39,7 @@ const ServiceAction = () => {
                         </button>
                     </div>
                 </div>
-                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6" data-aos="fade-left">
+                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6" data-aos="zoom-in">
                     <img className="object-cover object-center rounded-xl" alt="hero" src={research_action} />
                 </div>
             </div>

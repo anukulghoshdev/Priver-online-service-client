@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import ServicesCard from './ServicesCard';
 import banner_img from '../../../assests/banner/4.jpg'
 import useTitle from '../../../hooks/useTitle';
+import LoaderSpinner from '../../LoaderSpinner/LoaderSpinner';
 
 const AllServices = () => {
     const [services, setServices] = useState([])
@@ -13,6 +14,7 @@ const AllServices = () => {
     const searchRef = useRef();
 
     const [search, setSearch] = useState('');
+    const [loader, setLoader] = useState(true)
 
 
 
@@ -42,9 +44,15 @@ const AllServices = () => {
     useEffect(() => {
         fetch(`https://ass-10-server-plum.vercel.app/allservices?search=${search}&order=${isAsc === 'asc' ? 'asc' : 'desc'}`)
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => {
+                setServices(data)
+                setLoader(false);
+            })
     }, [isAsc, search])
 
+    if (loader) {
+        return <LoaderSpinner />
+    }
 
 
     return (

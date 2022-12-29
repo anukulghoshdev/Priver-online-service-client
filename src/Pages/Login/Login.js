@@ -44,7 +44,7 @@ const Login = () => {
 
     return (
         <div className="p-20 h-screen w-screen flex flex-col-reverse md:flex-row items-center justify-center bg-gray-200">
-            <div className="content text-3xl text-center md:text-left" data-aos="fade-right">
+            <div className="hidden md:block content text-3xl text-center md:text-left" data-aos="fade-right">
                 <h1 className="text-5xl text-slate-900 font-bold">Priver</h1>
                 <p>Connect with your best researchers to find the world .</p>
             </div>

@@ -7,6 +7,8 @@ import Services from '../Services/Services';
 
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import ResearchSummary from '../ResearchSummary/ResearchSummary';
+import OurResearchTeam from '../OurResearchTeam/OurResearchTeam';
 
 
 const Home = () => {
@@ -17,6 +19,8 @@ const Home = () => {
             <Banner></Banner>
             <Services></Services>
             <ServiceFeatures></ServiceFeatures>
+            <ResearchSummary></ResearchSummary>
+            <OurResearchTeam></OurResearchTeam>
             <ServiceAction></ServiceAction>
         </div>
     );

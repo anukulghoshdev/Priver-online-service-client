@@ -127,7 +127,7 @@ const SignUp = () => {
         <div className="h-screen  flex justify-center items-center w-full my-6 bg-gray-200  mt-0">
             <form className='' data-aos="zoom-in" onSubmit={handleSubmit}>
                 <div className="bg-white px-10 py-8 rounded-2xl w-screen shadow-xl max-w-sm">
-                    <div className="space-y-4 shadow-xl border-3 border-slate-900 ">
+                    <div className="space-y-4  border-3 border-slate-900 ">
                         <h1 className="text-center  font-bold text-4xl mb-9 ">Sign Up</h1>
                         <div>
                             <input onChange={handleUsernameChange} name='username' value={userInfo.username} type="text" placeholder="Username" className="mb-3 py-3 px-4 border border-gray-400 focus:outline-none rounded-md focus:ring-1 ring-cyan-500 bg-indigo-50 outline-none w-full" required />
