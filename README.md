@@ -16,6 +16,7 @@
 - Priver is an online based Service providing website.
 - Users can add their services with specific prices and they can buy any services with their desire.
 - Services can be created, updated and deleted by a user.
+- JWT Token for valid user, used mongodb for backend and nodejs for server side.
 
 <<<<<<< HEAD
 ### `npm start`
