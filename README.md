@@ -13,6 +13,9 @@
 - tailwind css
 - 
 -------different features and functionality-------
+- Priver is an online based Service providing website.
+- Users can add their services with specific prices and they can buy any services with their desire.
+- Services can be created, updated and deleted by a user.
 
 <<<<<<< HEAD
 ### `npm start`
